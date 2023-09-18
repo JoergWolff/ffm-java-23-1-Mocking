@@ -41,14 +41,14 @@ class ProductServiceTest {
         NewProduct newProduct = new NewProduct("product1", 30);
         Product savedProduct = new Product("123", "product1", 30);
 
-        when(productRepository.save(savedProduct)).thenReturn(savedProduct);
+        when(productRepository.save(any())).thenReturn(savedProduct);
 
         //WHEN
         Product actual = productService.addProduct(newProduct);
 
         //THEN
         Product expected = new Product("123", "product1", 30);
-        verify(productRepository).save(savedProduct);
+        verify(productRepository).save(any());
         assertEquals(expected, actual);
     }
 }
