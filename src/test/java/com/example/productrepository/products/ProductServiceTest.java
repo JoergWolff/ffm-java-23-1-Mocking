@@ -51,4 +51,13 @@ class ProductServiceTest {
         verify(productRepository).save(any());
         assertEquals(expected, actual);
     }
+
+    @Test
+    void findById(){
+        //GIVEN
+
+        //WHEN
+
+        //THEN
+    }
 }
